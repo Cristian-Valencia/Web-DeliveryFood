@@ -1,4 +1,161 @@
 .restaurantsContainer{
-    background: darkseagreen;
-    /* margin-top: 3rem; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurantsCard{
+    margin: 2rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.07);
+    width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .restaurantsCard{
+        width: 30%;
+        margin: 1.4rem;
+    }
+
+}
+
+
+.cardImage{
+    width: 100%;
+}
+
+
+.descriptionContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logoContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1rem 1rem 1rem;
+    background: rgb(240, 240, 240);
+}
+
+.logo{
+    width: 30%;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .logo{
+        width: 20%;
+    }
+
+}
+
+.restaurantName{
+    width: 50%;
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+.descriptionTitleContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: .5rem;
+}
+
+
+.description{
+    width: 70%;
+    font-size: .8rem;
+    font-weight: bold;
+    padding-left: 2rem;
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .description{
+        width: 50%;
+    }
+
+}
+
+.costiConsegna{
+    position: relative;
+}
+
+.costiConsegna::before{
+    content: " ";
+    background-size: contain;
+    width: 20px;
+    height: 50px;
+    background-image: url('../../../assets/images/icons/cost.svg');
+    position: absolute;
+    top: -6px;
+    left: 0;
+    background-repeat: no-repeat;
+}
+
+.ordineMinimo{
+    position: relative;
+}
+
+.ordineMinimo::before{
+    content: " ";
+    background-size: contain;
+    width: 20px;
+    height: 50px;
+    background-image: url('../../../assets/images/icons/orderMin.svg');
+    position: absolute;
+    top: -6px;
+    left: 0;
+    background-repeat: no-repeat;
+}
+
+.tempoConsegna{
+    position: relative;
+}
+
+.tempoConsegna::before{
+    content: " ";
+    background-size: contain;
+    width: 20px;
+    height: 50px;
+    background-image: url('../../../assets/images/icons/time.svg');
+    position: absolute;
+    top: -6px;
+    left: 0;
+    background-repeat: no-repeat;
+}
+
+.tipologia{
+    position: relative;
+}
+
+.tipologia::before{
+    content: " ";
+    background-size: contain;
+    width: 20px;
+    height: 50px;
+    background-image: url('../../../assets/images/icons/type.svg');
+    position: absolute;
+    top: -6px;
+    left: 0;
+    background-repeat: no-repeat;
+}
+
+.descriptionResult{
+    width:30%;
+    font-size: .8rem;
+    color: rgb(85, 84, 84);
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .descriptionResult{
+        width: 50%;
+    }
+
 }

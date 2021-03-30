@@ -6,7 +6,7 @@ import backgroundImage from '../../../assets/images/background.jpg';
 const Home = () => {
     return (
         <div className = {styles.homeContainer}>
-            <img src={backgroundImage} className = {styles.backgroundImage} />
+            <img src={backgroundImage} className = {styles.backgroundImage} alt="Background" />
             <h1>Ciao sono la home</h1>
         </div>
     )
