@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Restaurants.module.css';
 import { getListedRestaurants } from '../../../services/ListedRestaurantsService';
+import { Link } from 'react-router-dom';
+
 
 
 const Restaurants = () => {
@@ -27,67 +29,70 @@ const Restaurants = () => {
                 listedRestaurants &&
                     listedRestaurants.map((el:any, index:number)=>{
 
-                        return <div key={index} className={styles.restaurantsCard}>
+                        return <Link to="/selectedRestaurant" key={index} className={styles.linkStyles}>
+                                    {/* <div className={styles.restaurantsCard}> */}
 
-                                    <div>
-
-                                        <img 
-                                            src={`/images/cardRestaurantsImage/${el.Ristorante.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '')}.jpg`} 
-                                            alt="RestaurantImage" 
-                                            className={styles.cardImage}
-                                        />
-
-                                    </div>
-
-                                    <div className={styles.descriptionContainer}>
-
-                                        <div className={styles.logoContainer}>
+                                        <div className={styles.cardImageContainer}>
 
                                             <img 
-                                                src={`/images/logoImages/${el.Ristorante.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '')}.gif`} 
-                                                alt="logoImage"
-                                                className={styles.logo}
-
+                                                src={`/images/cardRestaurantsImage/${el.Ristorante.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '')}.jpg`} 
+                                                alt="RestaurantImage" 
+                                                className={styles.cardImage}
                                             />
-                                            <h3 className={styles.restaurantName}>{el.Ristorante}</h3>
 
                                         </div>
 
-                                        <div className={styles.descriptionTitleContainer}>
+                                        <div className={styles.descriptionContainer}>
 
-                                            <h3 className={`${styles.description} ${styles.costiConsegna}`}>Costi Consegna: </h3>
+                                            <div className={styles.logoContainer}>
 
-                                            {
-                                                el.CostiConsegna != "0" ? 
-                                                <h3 className={styles.descriptionResult}>€ {el.CostiConsegna}0</h3> 
-                                                : 
-                                                <h3 className={styles.descriptionResult}>Gratis</h3>
-                                            }
+                                                <img 
+                                                    src={`/images/logoImages/${el.Ristorante.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '')}.gif`} 
+                                                    alt="logoImage"
+                                                    className={styles.logo}
 
-                                            {/* <h3 className={styles.descriptionResult}>€ {el.CostiConsegna}</h3> */}
+                                                />
+                                                <h3 className={styles.restaurantName}>{el.Ristorante}</h3>
 
-                                            <h3 className={`${styles.description} ${styles.ordineMinimo}`}>Ordine Minimo: </h3>
+                                            </div>
 
-                                            <h3 className={styles.descriptionResult}>€ {el.OrdineMinimo}</h3>
+                                            <div className={styles.descriptionTitleContainer}>
 
-                                            <h3 className={`${styles.description} ${styles.tempoConsegna}`}>Tempo Consegna: </h3>
+                                                <h3 className={`${styles.description} ${styles.costiConsegna}`}>Costi Consegna: </h3>
 
-                                            <h3 className={styles.descriptionResult}>{el.TempiConsegna} m</h3>
+                                                {
+                                                    el.CostiConsegna !== "0" ? 
+                                                    <h3 className={styles.descriptionResult}>€ {el.CostiConsegna}0</h3> 
+                                                    : 
+                                                    <h3 className={styles.descriptionResult}>Gratis</h3>
+                                                }
 
-                                            <h3 className={`${styles.description} ${styles.tipologia}`}>Tipologia: </h3>
+                                                {/* <h3 className={styles.descriptionResult}>€ {el.CostiConsegna}</h3> */}
 
-                                            <h3 className={styles.descriptionResult}>{el.tipologia.Tipologia}</h3>
+                                                <h3 className={`${styles.description} ${styles.ordineMinimo}`}>Ordine Minimo: </h3>
+
+                                                <h3 className={styles.descriptionResult}>€ {el.OrdineMinimo}</h3>
+
+                                                <h3 className={`${styles.description} ${styles.tempoConsegna}`}>Tempo Consegna: </h3>
+
+                                                <h3 className={styles.descriptionResult}>{el.TempiConsegna} m</h3>
+
+                                                <h3 className={`${styles.description} ${styles.tipologia}`}>Tipologia: </h3>
+
+                                                <h3 className={styles.descriptionResult}>{el.tipologia.Tipologia}</h3>
+
+                                            </div>
+
+
+                                        
 
                                         </div>
 
 
-                                       
+{/* 
+                                    </div> */}
 
-                                    </div>
-
-
-
-                               </div>
+                                </Link>
                     })
                 
             }
