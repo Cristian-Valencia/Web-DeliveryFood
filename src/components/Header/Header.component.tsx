@@ -16,8 +16,8 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav" className={styles.linkContainer} >
                     <Nav className={`mr-auto`}>
                     <Nav.Link href="/" className={styles.homeLink}>Home</Nav.Link>
-                    <Nav.Link href="/restaurants" className={styles.restaurantsLink}>Restaurants</Nav.Link>
-                    <Nav.Link href="/selectedRestaurant" className={styles.aboutUsLink}>About Us</Nav.Link>
+                    <Nav.Link href="/restaurants" className={styles.restaurantsLink}>Ristoranti</Nav.Link>
+                    <Nav.Link href="/selectedRestaurant" className={styles.aboutUsLink}>Login/Registrazioni</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

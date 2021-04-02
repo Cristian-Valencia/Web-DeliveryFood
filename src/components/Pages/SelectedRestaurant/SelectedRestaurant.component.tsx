@@ -3,6 +3,7 @@ import styles from './SelectedRestaurant.module.css';
 import { getProducts } from '../../../services/ListedProductsService';
 import restaurantImage from '../../../assets/images/NonnachePizza.jpg';
 import restaurantLogo from '../../../assets/images/NonnachePizza.gif';
+import { loginUser } from '../../../services/LoginService';
 
 
 const SelectedRestaurant = () => {
@@ -19,12 +20,23 @@ const SelectedRestaurant = () => {
                 setPizza(data.filter((el:any)=> el.IdProdotto < 11));
                 setBibite(data.filter((el:any) => el.IdProdotto > 11));
                 setRestaurantName(data[0].Ristorante);
-            })
+            });
+
+        // loginUser()
+        //     .then((data)=>{
+        //         console.log(data)
+        //     })
 
     }, [])
 
-    console.log(pizza);
-    console.log(bibite);
+    const lookAtTheProducts = (product:any) =>{
+        console.log(product)
+    }
+
+
+
+    // console.log(pizza);
+    // console.log(bibite);
 
     
 
@@ -33,7 +45,8 @@ const SelectedRestaurant = () => {
 
             <div className={styles.selectedRestaurantHead}>
                 <div className={styles.imageContainer}>
-                    <img src={restaurantImage} alt="background img" className={styles.backgroundImage} />
+                    {/* <img src={restaurantImage} alt="background img" className={styles.backgroundImage} /> */}
+                    <div className={styles.imageBackground}></div>
                     <img src={restaurantLogo} alt="logo" className={styles.logoImage}/>
                 </div>
                 <div className={styles.descriptionRestaurantContainer}>
@@ -65,13 +78,19 @@ const SelectedRestaurant = () => {
 
                                             <h3 className={styles.nomePizza}>{el.Prodotto}</h3>
                                             <h3 className={styles.descrizionePizza}>{el.Descrizione}</h3>
-                                            <h3 className={styles.prezzoPizza}>{el.Prezzo} €</h3>
+
+                                            {
+                                                el.Prezzo.includes('.') ?
+                                                <h3 className={styles.prezzoPizza}>{el.Prezzo}0 €</h3>
+                                                :
+                                                <h3 className={styles.prezzoPizza}>{el.Prezzo} €</h3>
+                                            }
 
                                         </div>
 
                                         <div className={styles.addButtonContainer}>
 
-                                            <button>+</button>
+                                            <div className={styles.addButton} onClick={()=>lookAtTheProducts(el)}>+</div>
 
                                         </div>
 
@@ -82,26 +101,32 @@ const SelectedRestaurant = () => {
                 }
             </div>
 
-            <div>
+            <div className={styles.productsDrinksContainer}>
 
-                <h2>Bibite</h2>
+                <h2 className={styles.drinkTitle}>Bibite</h2>
 
                 {
                     bibite &&
                         bibite.map((el:any)=>{
                             return <div className={styles.drinksCard} key={el.IdProdotto}>
 
-                                        <div>
+                                        <div className={styles.drinksDescriptionContainer}>
 
-                                            <h3>{el.Prodotto}</h3>
-                                            <h3>{el.Descrizione}</h3>
-                                            <h3>{el.Prezzo}</h3>
+                                            <h3 className={styles.drinkName}>{el.Prodotto}</h3>
+                                            <h3 className={styles.drinkDescription}>{el.Descrizione}</h3>
+
+                                            {
+                                                el.Prezzo.includes('.') ?
+                                                    <h3 className={styles.drinkPrice}>{el.Prezzo}0 €</h3>
+                                                    :
+                                                    <h3 className={styles.drinkPrice}>{el.Prezzo} €</h3>
+                                            }
 
                                         </div>
 
-                                        <div>
+                                        <div className={styles.addButtonContainer}>
 
-                                            <button>+</button>
+                                            <div className={styles.addButton} onClick={()=>lookAtTheProducts(el)}>+</div>
 
                                         </div>
 
