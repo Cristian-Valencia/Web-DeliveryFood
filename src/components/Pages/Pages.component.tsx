@@ -5,6 +5,8 @@ import Home from './Home/Home.component';
 import Restaurants from './Restaurants/Restaurants.component';
 import SelectedRestaurant from './SelectedRestaurant/SelectedRestaurant.component';
 import styles from './Pages.module.css' 
+import Login from './Login/Login.component';
+import Register from './Register/Register.component';
 
 const Pages = () => {
     return (
@@ -21,6 +23,14 @@ const Pages = () => {
 
                 <Route exact path="/selectedRestaurant">
                     <SelectedRestaurant />
+                </Route>
+
+                <Route exact path="/login">
+                    <Login />
+                </Route>
+
+                <Route exact path="/Register">
+                    <Register />
                 </Route>
 
                 <Route exact path="/*">

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Header.module.css';
 import logo from '../../assets/images/logo-nero.png';
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -9,15 +10,23 @@ const Header = () => {
         <div className = {styles.headerContainer}>
 
             <Navbar expand="lg" bg='light'>
-                <Navbar.Brand href="/">
-                    <img src={logo} alt="Delivery App Logo" className={styles.logo}/>
+                <Navbar.Brand>
+                    <Link to="/">
+                        <img src={logo} alt="Delivery App Logo" className={styles.logo}/>
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"  className={styles.hamburgerMenu}/>
                 <Navbar.Collapse id="basic-navbar-nav" className={styles.linkContainer} >
                     <Nav className={`mr-auto`}>
-                    <Nav.Link href="/" className={styles.homeLink}>Home</Nav.Link>
-                    <Nav.Link href="/restaurants" className={styles.restaurantsLink}>Ristoranti</Nav.Link>
-                    <Nav.Link href="/selectedRestaurant" className={styles.aboutUsLink}>Login/Registrazioni</Nav.Link>
+                    <Nav.Link className={styles.navHomeLink}>
+                        <Link to="/" className={styles.homeLink}>Home</Link>
+                    </Nav.Link>
+                    <Nav.Link className={styles.navRestaurantsLink}>
+                        <Link to="/selectedRestaurant" className={styles.restaurantsLink}>Ristoranti</Link>
+                    </Nav.Link>
+                    <Nav.Link className={styles.navLoginLink}>
+                        <Link to="/login" className={styles.loginLink}>Login/Registrazioni</Link>
+                    </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

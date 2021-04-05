@@ -1,6 +1,6 @@
-/* .selectedRestaurantContainer{
-
-} */
+.selectedRestaurantContainer{
+    margin-bottom: 3rem;
+}
 
 /* Selected Restaurant Head CSS */
 
@@ -12,13 +12,13 @@
     width: 100%;
 }
 
-/* @media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {
 
     .imageContainer{
-        height: 20%;
+        margin-bottom: 4em;
     }
 
-} */
+}
 
 .backgroundImage{
     width: 100%;
@@ -35,9 +35,8 @@
 
 @media only screen and (min-width: 992px) {
 
-    .backgroundImage{
+    .imageBackground{
         height: 15rem;
-        background: center;
     }
 
 }
@@ -63,6 +62,9 @@
 
     .logoImage{
         width: 10%;
+        left: 90%;
+        top: 60%;
+        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.07);
     }
 
 }
@@ -72,10 +74,23 @@
     margin: 2rem;
 }
 
+@media only screen and (min-width:992px){
+    .descriptionRestaurantContainer{
+        padding-right: 50%;
+    }
+}
+
 .restaurantName{
     font-weight: bold;
     font-size: 1.5rem;
 }
+
+@media only screen and (min-width:992px){
+    .restaurantName{
+        font-size: 3rem;
+    }
+}
+
 
 .restaurantDescription{
     font-size: 1rem;
@@ -88,12 +103,24 @@
     margin: 1rem;
 }
 
+@media only screen and (min-width:992px){
+    .productsContainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 /* Pizza Card CSS */
 
 .pizzaTitle{
     position:relative;
     margin-left: 5rem;
     margin-bottom: 2rem;
+}
+@media only screen and (min-width:992px){
+    .pizzaTitle{
+        width: 100%;
+    }
 }
 
 .pizzaTitle::before{
@@ -108,12 +135,25 @@
     background-repeat: no-repeat;
 }
 
+@media only screen and (min-width:992px){
+    .pizzaTitle::before{
+        left: -4%;
+    }
+}
+
 .pizzaCard{
     display: flex;
     margin: 1rem;
     flex-wrap: wrap;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.07);
     border-radius: 10px;
+}
+
+@media only screen and (min-width:992px){
+    .pizzaCard{
+        width: 30%;
+        margin: 1.4rem;
+    }
 }
 
 .pizzaDescriptionContainer{
@@ -159,12 +199,25 @@
     margin: 4rem 1rem 1rem 1rem;
 }
 
+@media only screen and (min-width:992px){
+    .productsDrinksContainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 /* Drinks Card CSS */
 
 .drinkTitle{
     position:relative;
     margin-left: 5rem;
     margin-bottom: 2rem;
+}
+
+@media only screen and (min-width:992px){
+    .drinkTitle{
+        width: 100%;
+    }
 }
 
 .drinkTitle::before{
@@ -179,12 +232,25 @@
     background-repeat: no-repeat;
 }
 
+@media only screen and (min-width:992px){
+    .drinkTitle::before{
+        left: -4%;
+    }
+}
+
 .drinksCard{
     display: flex;
     margin: 1rem;
     flex-wrap: wrap;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.07);
     border-radius: 10px;
+}
+
+@media only screen and (min-width:992px){
+    .drinksCard{
+        width: 30%;
+        margin: 1.4rem;
+    }
 }
 
 .drinksDescriptionContainer{

@@ -1,0 +1,43 @@
+.footerContainer{
+    padding: 1.5rem;
+    background: rgba(240, 240, 240, 0.562);
+    margin-top: 2rem;
+}
+
+.submenuList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.submenuList li:nth-child(2), .submenuList li:nth-child(3){
+    margin-top: 1rem;
+}
+
+.submenuLinks{
+    text-decoration: none;
+    color: black;
+}
+
+.socialIconsContainer{
+    margin-top: 2rem;
+}
+
+.socialIconsContainer img{
+    margin-left: 1rem;
+}
+
+.socialIconsContainer img:first-child{
+    margin-left: 0;
+}
+
+.paymentCotnainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+
+.payment{
+    width: 30%;
+}

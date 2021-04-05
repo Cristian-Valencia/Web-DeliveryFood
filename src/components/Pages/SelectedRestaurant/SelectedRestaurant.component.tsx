@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './SelectedRestaurant.module.css';
 import { getProducts } from '../../../services/ListedProductsService';
-import restaurantImage from '../../../assets/images/NonnachePizza.jpg';
-import restaurantLogo from '../../../assets/images/NonnachePizza.gif';
 import { loginUser } from '../../../services/LoginService';
 
 
@@ -47,7 +45,7 @@ const SelectedRestaurant = () => {
                 <div className={styles.imageContainer}>
                     {/* <img src={restaurantImage} alt="background img" className={styles.backgroundImage} /> */}
                     <div className={styles.imageBackground}></div>
-                    <img src={restaurantLogo} alt="logo" className={styles.logoImage}/>
+                    {/* <img src={restaurantLogo} alt="logo" className={styles.logoImage}/> */}
                 </div>
                 <div className={styles.descriptionRestaurantContainer}>
 

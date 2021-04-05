@@ -12,13 +12,59 @@
     margin-right: 1rem;
 }
 
-.homeLink, .restaurantsLink, .aboutUsLink{
+.navHomeLink, .navRestaurantsLink, .navLoginLink{
     text-align: right;
     margin-right: 1rem;
+    text-decoration: none;
+    color: unset;
+    position: relative;
 }
 
+.homeLink, .restaurantsLink, .loginLink{
+    color: unset;
+    text-decoration: none;
+}
+
+.homeLink::before{
+    content: " ";
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    background-image: url('../../assets/images/icons/home.png');
+    position: absolute;
+    top: 25%;
+    left: 78%;
+    background-repeat: no-repeat;
+}   
+
+.restaurantsLink::before{
+    content: " ";
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    background-image: url('../../assets/images/icons/restaurant.png');
+    position: absolute;
+    top: 25%;
+    left: 71%;
+    background-repeat: no-repeat;
+}   
+
+.loginLink::before{
+    content: " ";
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    background-image: url('../../assets/images/icons/login.png');
+    position: absolute;
+    top: 25%;
+    left: 52%;
+    background-repeat: no-repeat;
+}   
+
+
+
 @media only screen and (min-width: 992px) {
-    .homeLink, .restaurantsLink, .aboutUsLink{
+    .homeLink, .restaurantsLink, .loginLink{
         text-align: unset;
         margin: 0;
     }
