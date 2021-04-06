@@ -1,8 +1,58 @@
 .homeContainer{
-    background: darksalmon;
+    width: 100%;
     /* margin-top: 3rem; */
 }
 
 .backgroundImage{
     width: 100%;
+}
+
+.headerImageContainer{
+    width: 100%;
+    position: relative;
+}
+
+.title{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width:992px){
+    .title{
+        font-size: 3rem;
+        left: 30%;
+        top: 40%;
+    }
+}
+
+.subTitle{
+    color: white;
+    position: absolute;
+    top: 65%;
+    left: 60%;
+    width: 46%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width:992px){
+    .subTitle{
+        top: 50%;
+        left: 60%;
+    }
+}
+
+.carouselContainer{
+    margin-top: 10rem;
+    width: 100%;
+}
+
+.carouselTitle{
+    margin: 1rem;
+}
+
+.downloadContainer{
+    margin-top: 3rem;
 }

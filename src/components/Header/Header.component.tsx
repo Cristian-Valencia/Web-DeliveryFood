@@ -18,15 +18,13 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"  className={styles.hamburgerMenu}/>
                 <Navbar.Collapse id="basic-navbar-nav" className={styles.linkContainer} >
                     <Nav className={`mr-auto`}>
-                    <Nav.Link className={styles.navHomeLink}>
+                   
                         <Link to="/" className={styles.homeLink}>Home</Link>
-                    </Nav.Link>
-                    <Nav.Link className={styles.navRestaurantsLink}>
+                    
                         <Link to="/selectedRestaurant" className={styles.restaurantsLink}>Ristoranti</Link>
-                    </Nav.Link>
-                    <Nav.Link className={styles.navLoginLink}>
+                    
                         <Link to="/login" className={styles.loginLink}>Login/Registrazioni</Link>
-                    </Nav.Link>
+                    
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
