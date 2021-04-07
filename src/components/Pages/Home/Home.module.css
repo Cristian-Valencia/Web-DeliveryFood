@@ -53,6 +53,10 @@
     margin: 1rem;
 }
 
-.downloadContainer{
+.downloadAppContainer{
     margin-top: 3rem;
+}
+
+.downloadTitle{
+    margin: 1rem;
 }

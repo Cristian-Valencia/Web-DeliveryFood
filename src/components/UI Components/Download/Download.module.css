@@ -1,0 +1,36 @@
+.downloadMobileContainer{
+    width: 100%;
+}
+
+.mockupContainer{
+    width: 100%;
+}
+
+.mockupImage{
+    width: 100%;
+}
+
+.storeContainer{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.appleContainer{
+    width: 50%;
+}
+
+.appleStore{
+    width: 100%;
+}
+
+.googleContainer{
+    width: 50%;
+    margin: 1rem;
+}
+
+.googlePlay{
+    width: 100%;
+}

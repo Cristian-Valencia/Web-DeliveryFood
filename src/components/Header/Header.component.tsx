@@ -21,7 +21,7 @@ const Header = () => {
                    
                         <Link to="/" className={styles.homeLink}>Home</Link>
                     
-                        <Link to="/selectedRestaurant" className={styles.restaurantsLink}>Ristoranti</Link>
+                        <Link to="/restaurants" className={styles.restaurantsLink}>Ristoranti</Link>
                     
                         <Link to="/login" className={styles.loginLink}>Login/Registrazioni</Link>
                     

@@ -3,7 +3,7 @@ import styles from './Home.module.css';
 import backgroundImage from '../../../assets/images/background.jpg';
 import AddressSearching from '../../UI Components/AddressSearching/AddressSearching.component';
 import CarouselComponent from '../../UI Components/Carousel/Carousel.component';
-import DownloadApp from '../../UI Components/DownloadApp/DownloadApp.component';
+import Download from '../../UI Components/Download/Download.component';
 
 
 const Home = () => {
@@ -30,9 +30,12 @@ const Home = () => {
 
             </div>
 
-            <div className={styles.downloadContainer}>
 
-                <DownloadApp />
+            <div className={styles.downloadAppContainer}>
+
+                <h2 className={styles.downloadTitle}>Scarica la nostra App</h2>
+
+                <Download />
 
             </div>
             
