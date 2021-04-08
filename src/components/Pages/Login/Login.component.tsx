@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import styles from 'Login.module.css'
+import { Link } from 'react-router-dom';
+import styles from './Login.module.css';
 
 
 const Login = () => {
@@ -8,27 +9,39 @@ const Login = () => {
 
 
     return (
-        <div>
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
+        <div className={styles.loginContainer}>
+
+            <Form className={styles.formContainer}>
+
+                <h2 className={styles.loginTitle}>Accedi</h2>
+
+                <Form.Group controlId="formBasicEmail" className={styles.usernameGroup}>
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="email" placeholder="Inserisci Username" />
+                    {/* <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
-                    </Form.Text>
+                    </Form.Text> */}
                 </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
+                <Form.Group controlId="formBasicPassword" className={styles.passwordGroup}>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <Form.Group controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
+                
+                <p className={styles.registrationParagraph}>
+                    Prima volta su LabForFood Delivery? 
+                    <Link to="/registerPage" className={styles.registrationButton}>
+                        Crea un account
+                    </Link>
+                </p>
+                
+
+                <Button variant="primary" type="submit" className={styles.buttonLogin}>
                     Submit
                 </Button>
             </Form>
+
+
         </div>
     )
 }

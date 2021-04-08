@@ -1,0 +1,37 @@
+.loginContainer{
+    padding: 7rem 3rem;
+    background: url(../../../assets/images/backgroundLogin.jpg) center;
+    background-size: cover;
+}
+
+.formContainer{
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.07);
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.loginTitle{
+    margin:.5rem;
+}
+
+.usernameGroup{
+    margin: .5rem;
+}
+
+.passwordGroup{
+    margin: .5rem;
+}
+
+.registrationParagraph{
+    margin:.5rem;
+}
+
+.registrationButton{
+    text-decoration: none;
+    margin-left: .5rem;
+}
+
+.buttonLogin{
+    margin:.5rem;
+}

@@ -20,21 +20,12 @@ const SelectedRestaurant = () => {
                 setRestaurantName(data[0].Ristorante);
             });
 
-        // loginUser()
-        //     .then((data)=>{
-        //         console.log(data)
-        //     })
-
     }, [])
 
     const lookAtTheProducts = (product:any) =>{
         console.log(product)
     }
 
-
-
-    // console.log(pizza);
-    // console.log(bibite);
 
     
 
@@ -65,7 +56,7 @@ const SelectedRestaurant = () => {
 
             <div className={styles.productsContainer}>
 
-                <h2 className={styles.pizzaTitle}>Pizze</h2>
+                <h2 className={styles.pizzaTitle}>Menù</h2>
 
                 {
                     pizza &&

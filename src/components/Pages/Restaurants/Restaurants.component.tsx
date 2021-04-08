@@ -2,24 +2,39 @@ import React, { useEffect, useState } from 'react';
 import styles from './Restaurants.module.css';
 import { getListedRestaurants } from '../../../services/ListedRestaurantsService';
 import { Link } from 'react-router-dom';
+// import { getRestaurantDetail } from '../../../store/detailSelectedRestaurant/detailSelectedRestaurant.action';
+import store from '../../../store/store';
 
 
 
-const Restaurants = () => {
+const Restaurants = (props:any) => {
 
     const [listedRestaurants, setListedRestaurants] = useState<any>("");
+    const [clickedRestaurant, setClickedRestaurant] = useState({});
+
+    console.log(props)
 
     useEffect(() => {
 
         getListedRestaurants()
             .then((data)=>{
-                console.log(data);
                 setListedRestaurants(data);
             })
 
-
-
     }, [])
+
+    useEffect(() => {
+        
+        clickedRestaurant !== {} &&
+            props.restaurantUpdate(clickedRestaurant)
+            console.log(props)
+
+
+    }, [clickedRestaurant])
+
+    const findId = (restaurant:any) => {
+        setClickedRestaurant(restaurant)
+    }
 
 
     return (
@@ -29,8 +44,8 @@ const Restaurants = () => {
                 listedRestaurants &&
                     listedRestaurants.map((el:any, index:number)=>{
 
-                        return <Link to="/selectedRestaurant" key={index} className={styles.linkStyles}>
-                                    {/* <div className={styles.restaurantsCard}> */}
+                        // return <Link to="/selectedRestaurant" key={index} className={styles.linkStyles}>
+                        return  <div key={el.IdRistorante} className={styles.linkStyles} onClick={()=>findId(el)}> 
 
                                         <div className={styles.cardImageContainer}>
 
@@ -89,10 +104,10 @@ const Restaurants = () => {
                                         </div>
 
 
-{/* 
-                                    </div> */}
 
-                                </Link>
+                                    </div>
+
+                                {/* </Link> */}
                     })
                 
             }
