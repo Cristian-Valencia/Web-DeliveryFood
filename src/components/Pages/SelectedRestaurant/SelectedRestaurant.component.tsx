@@ -2,22 +2,26 @@ import React, { useEffect, useState } from 'react';
 import styles from './SelectedRestaurant.module.css';
 import { getProducts } from '../../../services/ListedProductsService';
 import { loginUser } from '../../../services/LoginService';
+import { Link } from 'react-router-dom';
+import back from '../../../assets/images/icons/arrow.svg';
+import BackArrow from '../../UI Components/BackArrow/BackArrow.component';
 
+const SelectedRestaurant = (props:any) => {
 
-const SelectedRestaurant = () => {
+    // console.log(props)
 
-    const [pizza, setPizza] = useState([]);
+    const [menu, setMenu] = useState([]);
     const [bibite, setBibite] = useState([]);
-    const [restaurantName, setRestaurantName ] = useState("");
+
 
     useEffect(() => {
         
-        getProducts()
+        getProducts(props.detailRestaurant.restaurant.IdRistorante)
             .then((data)=>{
                 data.sort((a:any, b:any)=> a.IdProdotto - b.IdProdotto);
-                setPizza(data.filter((el:any)=> el.IdProdotto < 11));
-                setBibite(data.filter((el:any) => el.IdProdotto > 11));
-                setRestaurantName(data[0].Ristorante);
+                setMenu(data.filter((el:any)=> el.IdProdotto < 31));
+                setBibite(data.filter((el:any) => el.IdProdotto > 30));
+                // console.log(data)
             });
 
     }, [])
@@ -25,24 +29,31 @@ const SelectedRestaurant = () => {
     const lookAtTheProducts = (product:any) =>{
         console.log(product)
     }
-
-
     
-
     return (
         <div className = {styles.selectedRestaurantContainer}>
+
+            <BackArrow />
 
             <div className={styles.selectedRestaurantHead}>
                 <div className={styles.imageContainer}>
                     {/* <img src={restaurantImage} alt="background img" className={styles.backgroundImage} /> */}
-                    <div className={styles.imageBackground}></div>
+
+                    {
+                        props.detailRestaurant.restaurant &&
+                            <div 
+                                className={styles.imageBackground} 
+                                style={{background : `url(/images/cardRestaurantsImage/${props.detailRestaurant.restaurant.Ristorante.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '')}.jpg)`}}>
+                            </div>
+                    }
+                    
                     {/* <img src={restaurantLogo} alt="logo" className={styles.logoImage}/> */}
                 </div>
                 <div className={styles.descriptionRestaurantContainer}>
 
                     {
-                        pizza &&
-                            <h2 className={styles.restaurantName}>{restaurantName}</h2>
+                        props.detailRestaurant.restaurant &&
+                            <h2 className={styles.restaurantName}>{props.detailRestaurant.restaurant.Ristorante}</h2>
                     }
 
                     <p className={styles.restaurantDescription}>
@@ -53,14 +64,14 @@ const SelectedRestaurant = () => {
 
                 </div>
             </div>
-
+ 
             <div className={styles.productsContainer}>
 
                 <h2 className={styles.pizzaTitle}>Menù</h2>
 
                 {
-                    pizza &&
-                        pizza.map((el:any)=>{
+                    menu &&
+                        menu.map((el:any)=>{
                             return <div className={styles.pizzaCard} key={el.IdProdotto}>
 
                                         <div className={styles.pizzaDescriptionContainer}>
@@ -88,7 +99,7 @@ const SelectedRestaurant = () => {
                                    </div>
                         })
                 }
-            </div>
+            </div> 
 
             <div className={styles.productsDrinksContainer}>
 

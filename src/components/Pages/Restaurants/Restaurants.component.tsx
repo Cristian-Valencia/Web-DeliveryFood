@@ -10,9 +10,6 @@ import store from '../../../store/store';
 const Restaurants = (props:any) => {
 
     const [listedRestaurants, setListedRestaurants] = useState<any>("");
-    const [clickedRestaurant, setClickedRestaurant] = useState({});
-
-    console.log(props)
 
     useEffect(() => {
 
@@ -20,20 +17,10 @@ const Restaurants = (props:any) => {
             .then((data)=>{
                 setListedRestaurants(data);
             })
-
     }, [])
 
-    useEffect(() => {
-        
-        clickedRestaurant !== {} &&
-            props.restaurantUpdate(clickedRestaurant)
-            console.log(props)
-
-
-    }, [clickedRestaurant])
-
     const findId = (restaurant:any) => {
-        setClickedRestaurant(restaurant)
+        props.restaurantUpdate(restaurant);
     }
 
 
@@ -44,8 +31,7 @@ const Restaurants = (props:any) => {
                 listedRestaurants &&
                     listedRestaurants.map((el:any, index:number)=>{
 
-                        // return <Link to="/selectedRestaurant" key={index} className={styles.linkStyles}>
-                        return  <div key={el.IdRistorante} className={styles.linkStyles} onClick={()=>findId(el)}> 
+                        return <Link to="/selectedRestaurant" key={index} className={styles.linkStyles} onClick={()=>findId(el)}>
 
                                         <div className={styles.cardImageContainer}>
 
@@ -98,16 +84,10 @@ const Restaurants = (props:any) => {
 
                                             </div>
 
-
-                                        
-
                                         </div>
 
 
-
-                                    </div>
-
-                                {/* </Link> */}
+                                </Link>
                     })
                 
             }

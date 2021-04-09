@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Error from './Error/Error.component';
 import Home from './Home/Home.component';
 import Restaurants from './Restaurants/Restaurants.container';
-import SelectedRestaurant from './SelectedRestaurant/SelectedRestaurant.component';
+import SelectedRestaurant from './SelectedRestaurant/SelectedRestaurant.container';
 import styles from './Pages.module.css' 
 import Login from './Login/Login.component';
 import Register from './Register/Register.component';

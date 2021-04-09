@@ -28,8 +28,7 @@
 .imageBackground{
     width: 100%;
     height: 12rem;
-    background: url(../../../assets/images/NonnachePizza.jpg) center;
-    background-size: cover;
+    background-position: center;
     
 }
 
@@ -128,7 +127,7 @@
     background-size: contain;
     width: 40px;
     height: 40px;
-    background-image: url('../../../assets/images/icons/pizza.svg');
+    background-image: url('../../../assets/images/icons/menu.svg');
     position: absolute;
     top: -10%;
     left: -20%;
