@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './SelectedRestaurant.module.css';
 import { getProducts } from '../../../services/ListedProductsService';
-import { loginUser } from '../../../services/LoginService';
-import { Link } from 'react-router-dom';
-import back from '../../../assets/images/icons/arrow.svg';
+// import { loginUser } from '../../../services/LoginService';
+// import { Link } from 'react-router-dom';
+// import back from '../../../assets/images/icons/arrow.svg';
 import BackArrow from '../../UI Components/BackArrow/BackArrow.component';
+import Cart from '../../UI Components/Cart/Cart.component';
 
 const SelectedRestaurant = (props:any) => {
 
@@ -24,7 +25,7 @@ const SelectedRestaurant = (props:any) => {
                 // console.log(data)
             });
 
-    }, [])
+    })
 
     const lookAtTheProducts = (product:any) =>{
         console.log(product)
@@ -32,6 +33,8 @@ const SelectedRestaurant = (props:any) => {
     
     return (
         <div className = {styles.selectedRestaurantContainer}>
+
+            
 
             <BackArrow />
 
@@ -43,7 +46,7 @@ const SelectedRestaurant = (props:any) => {
                         props.detailRestaurant.restaurant &&
                             <div 
                                 className={styles.imageBackground} 
-                                style={{background : `url(/images/cardRestaurantsImage/${props.detailRestaurant.restaurant.Ristorante.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '')}.jpg)`}}>
+                                style={{backgroundImage : `url(/images/cardRestaurantsImage/${props.detailRestaurant.restaurant.Ristorante.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '')}.jpg)`}}>
                             </div>
                     }
                     
@@ -137,6 +140,9 @@ const SelectedRestaurant = (props:any) => {
                 }
 
             </div>
+
+            <Cart />
+
         </div>
     )
 }

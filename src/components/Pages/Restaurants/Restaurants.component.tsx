@@ -3,7 +3,6 @@ import styles from './Restaurants.module.css';
 import { getListedRestaurants } from '../../../services/ListedRestaurantsService';
 import { Link } from 'react-router-dom';
 // import { getRestaurantDetail } from '../../../store/detailSelectedRestaurant/detailSelectedRestaurant.action';
-import store from '../../../store/store';
 
 
 

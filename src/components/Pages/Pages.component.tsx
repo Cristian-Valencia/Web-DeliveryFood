@@ -7,6 +7,7 @@ import SelectedRestaurant from './SelectedRestaurant/SelectedRestaurant.containe
 import styles from './Pages.module.css' 
 import Login from './Login/Login.component';
 import Register from './Register/Register.component';
+import Cart from './Cart/Cart.component';
 
 const Pages = () => {
     return (
@@ -31,6 +32,10 @@ const Pages = () => {
 
                 <Route exact path="/registerPage">
                     <Register />
+                </Route>
+
+                <Route exact path="/cart">
+                    <Cart />
                 </Route>
 
                 <Route exact path="/*">
