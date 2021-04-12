@@ -24,6 +24,8 @@ const Header = () => {
                         <Link to="/restaurants" className={styles.restaurantsLink}>Ristoranti</Link>
                     
                         <Link to="/login" className={styles.loginLink}>Login/Registrazioni</Link>
+
+                        <Link to="/orders" className={styles.orderLink}>Lista Ordini</Link>
                     
                     </Nav>
                 </Navbar.Collapse>

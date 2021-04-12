@@ -7,7 +7,9 @@ import SelectedRestaurant from './SelectedRestaurant/SelectedRestaurant.containe
 import styles from './Pages.module.css' 
 import Login from './Login/Login.component';
 import Register from './Register/Register.component';
+import Orders from './Orders/Orders.component';
 import Cart from './Cart/Cart.component';
+import DetailOrderPage from './DetailOrderPage/DetailOrderPage.component';
 
 const Pages = () => {
     return (
@@ -34,9 +36,18 @@ const Pages = () => {
                     <Register />
                 </Route>
 
+                <Route exact path="/orders">
+                    <Orders />
+                </Route>
+
                 <Route exact path="/cart">
                     <Cart />
                 </Route>
+
+                <Route exact path = "/detailOrderPage">
+                    <DetailOrderPage />
+                </Route>
+
 
                 <Route exact path="/*">
                     <Error />
@@ -45,6 +56,6 @@ const Pages = () => {
             </Switch>
         </div>
     )
-}
+};
 
 export default Pages

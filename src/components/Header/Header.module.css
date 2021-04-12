@@ -12,7 +12,7 @@
     margin-right: 1rem;
 }
 
-.homeLink, .restaurantsLink, .loginLink{
+.homeLink, .restaurantsLink, .loginLink, .orderLink{
     color: unset;
     text-decoration: none;
     color: unset;
