@@ -1,0 +1,47 @@
+.detailOrderContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.productContainer{
+    width: 80%;
+    display: flex;
+    margin: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px solid black;
+}
+
+.productInformationContainer{
+    width: 65%;
+    padding: 1rem;
+}
+
+.quantityContainer{
+    width: 35%;
+    padding: 1rem;
+    display: flex;
+    position: relative;
+}
+
+.addButton, .removebutton,.quantity{
+    height: 3rem;
+}
+
+.addButton, .removebutton{
+    width: 30%;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    color: grey;
+    cursor: pointer;
+}
+
+.quantity{
+    width: 30%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: .5rem;
+}
