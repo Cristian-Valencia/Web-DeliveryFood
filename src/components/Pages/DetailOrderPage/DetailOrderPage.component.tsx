@@ -8,33 +8,49 @@ const DetailOrderPage = () => {
 
     const [quantityOrder, setQuantityOrder] = useState<any>([]);
 
-    const [quantity, setQuantity] = useState()
+    let productsArray:any;
 
     useEffect(() => {
 
         getDetailOrder()
             .then((data:any)=>{
                 setDetailOrder(data);
-                console.log(data)
                 setQuantityOrder(data);
             })
         
     }, [])
 
     const quantita = (e:any) =>{
-        return quantityOrder.filter((product:any)=>{ return e===product }).length;
+        return quantityOrder.filter((product:any)=>{ return e === product }).length;
     }
 
     const addOnCart = (e:any) =>{
-        quantityOrder.push(e);
-        console.log(quantityOrder.filter((product:any)=>{ return e===product }).length)
+        setQuantityOrder([...quantityOrder,e]);
     }
 
     const removeFromCart = (e:any) =>{
-        quantityOrder.splice(quantityOrder.indexOf(e), 1);
+
+        // const filteredArray = quantityOrder.filter( (el:any)=> el!==e );
+
+        // const arrayHadToSplied = quantityOrder.splice(quantityOrder.indexOf(e), 1);
+
+        // console.log(arrayHadToSplied);
+
+        // console.log(filteredArray);
+
+        // setQuantityOrder([]);
+
+        // console.log(quantityOrder);
+
+        // setQuantityOrder(quantityOrder.filter((el:any)=>{ return el!==e}))
+
+        console.log(quantityOrder.pop())
+
+        
+
     }
 
-    const demoCheck = (el:any) =>{
+    const demoCheck = () =>{
         console.log(quantityOrder)
     }
 
@@ -60,7 +76,7 @@ const DetailOrderPage = () => {
 
                                         <div className={styles.addButton} onClick={()=> addOnCart(el)}>+</div>
 
-                                            <p className={styles.quantity} onClick={() => demoCheck(el)}>
+                                            <p className={styles.quantity} onClick={demoCheck}>
                                                 {
                                                     quantita(el)
                                                 }
