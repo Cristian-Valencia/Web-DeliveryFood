@@ -1,5 +1,25 @@
-.formContainer{
-    margin: 1rem;
-    border: black 1px solid;
+.registerContainer{
+    background-image: url(../../../assets/images/registerBackground.jpg);
+    background-size: cover;
     padding: 1rem;
+}
+
+.formContainer{
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.nameContainer, .usernameContainer, .emailContainer, .passwordGroup, .confirmPasswordGroup{
+    margin: 1rem 0;
+}
+
+.checkBoxContainer{
+    margin: 1rem 0;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
 }

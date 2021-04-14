@@ -18,9 +18,6 @@ const Login = () => {
                 <Form.Group controlId="formBasicEmail" className={styles.usernameGroup}>
                     <Form.Label>Username</Form.Label>
                     <Form.Control type="email" placeholder="Inserisci Username" />
-                    {/* <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text> */}
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword" className={styles.passwordGroup}>

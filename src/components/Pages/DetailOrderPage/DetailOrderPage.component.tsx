@@ -44,9 +44,26 @@ const DetailOrderPage = () => {
 
         // setQuantityOrder(quantityOrder.filter((el:any)=>{ return el!==e}))
 
-        console.log(quantityOrder.pop())
+        // let a = quantityOrder.filter((el:any)=> el=== e).length;
 
-        
+        // let b:any = [];
+
+        // for (let index = a; index <= a; index-1) {
+            
+        //     b = [...b, e]
+        // }
+
+        let a = quantityOrder.filter((el:any)=> el!== e);
+
+        let b = quantityOrder.lastIndexOf(e);
+
+        console.log()
+
+        setQuantityOrder(quantityOrder)
+
+
+
+
 
     }
 
