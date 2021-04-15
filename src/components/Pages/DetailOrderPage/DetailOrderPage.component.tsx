@@ -8,6 +8,8 @@ const DetailOrderPage = () => {
 
     const [quantityOrder, setQuantityOrder] = useState<any>([]);
 
+    const [totale, setTotale] = useState(0);
+
     let productsArray:any;
 
     useEffect(() => {
@@ -30,45 +32,42 @@ const DetailOrderPage = () => {
 
     const removeFromCart = (e:any) =>{
 
-        // const filteredArray = quantityOrder.filter( (el:any)=> el!==e );
+        let a = quantityOrder.filter((el:any)=> el=== e).splice(1);
 
-        // const arrayHadToSplied = quantityOrder.splice(quantityOrder.indexOf(e), 1);
+        let b = quantityOrder.filter((el:any)=> el!== e);
 
-        // console.log(arrayHadToSplied);
-
-        // console.log(filteredArray);
-
-        // setQuantityOrder([]);
-
-        // console.log(quantityOrder);
-
-        // setQuantityOrder(quantityOrder.filter((el:any)=>{ return el!==e}))
-
-        // let a = quantityOrder.filter((el:any)=> el=== e).length;
-
-        // let b:any = [];
-
-        // for (let index = a; index <= a; index-1) {
-            
-        //     b = [...b, e]
-        // }
-
-        let a = quantityOrder.filter((el:any)=> el!== e);
-
-        let b = quantityOrder.lastIndexOf(e);
-
-        console.log()
-
-        setQuantityOrder(quantityOrder)
-
-
-
-
+        setQuantityOrder([...a,...b])
 
     }
 
+
+    useEffect(() => {
+
+        detailOrder.map((el:any) => {
+
+            let a = quantityOrder.filter((e:any)=> el=== e).length;
+
+            let b = el.Prezzo;
+
+            let c = a*b;
+
+            setTotale(() => totale + c)
+
+            // calculateTotal(c);
+        })
+
+    }, [quantityOrder])
+
+    // const calculateTotal = (el:any) => {
+    //     setTotale(totale + el)
+    //     console.log(totale)
+    // }
+
+
+
+
     const demoCheck = () =>{
-        console.log(quantityOrder)
+        console.log(totale)
     }
 
     return (
@@ -109,6 +108,8 @@ const DetailOrderPage = () => {
 
             <div>
                 <h3>Totale</h3>
+
+                <h3>{}</h3>
 
             </div>
             

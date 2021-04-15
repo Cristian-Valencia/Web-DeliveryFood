@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styles from './Login.module.css';
 
 
 const Login = () => {
+
+const [userName, setUserName] = useState("")
+const [password, setPassword] = useState("")
+
 
 
 
@@ -17,12 +21,22 @@ const Login = () => {
 
                 <Form.Group controlId="formBasicEmail" className={styles.usernameGroup}>
                     <Form.Label>Username</Form.Label>
-                    <Form.Control type="email" placeholder="Inserisci Username" />
+                    <Form.Control 
+                        type="text"
+                        placeholder="Inserisci Username" 
+                        value = {userName}
+                        onChange = { e => setUserName(e.target.value)}
+                    />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword" className={styles.passwordGroup}>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control 
+                        type="password" 
+                        placeholder="Password" 
+                        value = {password}
+                        onChange = { e => setPassword(e.target.value)}
+                    />
                 </Form.Group>
                 
                 <p className={styles.registrationParagraph}>

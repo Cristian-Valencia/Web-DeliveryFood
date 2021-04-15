@@ -3,7 +3,7 @@ import styles from './Cart.module.css';
 
 const Cart = () => {
     return (
-        <div>
+        <div className={styles.cartContainer}>
             <h3>Ciao Sono La pagina del Carrello</h3>
         </div>
     )
