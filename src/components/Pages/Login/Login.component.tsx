@@ -26,6 +26,7 @@ const [password, setPassword] = useState("")
                         placeholder="Inserisci Username" 
                         value = {userName}
                         onChange = { e => setUserName(e.target.value)}
+                        autoComplete="off"
                     />
                 </Form.Group>
 
@@ -36,6 +37,7 @@ const [password, setPassword] = useState("")
                         placeholder="Password" 
                         value = {password}
                         onChange = { e => setPassword(e.target.value)}
+                        autoComplete="off"
                     />
                 </Form.Group>
                 

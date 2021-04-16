@@ -45,3 +45,18 @@
     justify-content: center;
     padding-top: .5rem;
 }
+
+.totalContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.totalTitle{
+    width: 40%;
+    margin: 1rem;
+}
+
+.totalNumber{
+    width: 40%;
+    margin: 1rem;
+}

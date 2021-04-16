@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import styles from './Register.module.css';
+import { registerUser } from '../../../services/RegisterService';
 
 const Register = () => {
 
@@ -11,6 +11,45 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [check, setCheck] = useState<boolean>(false);
+    let btn:boolean = true;
+
+    // queste sono le regular Expression la prima è per la mail e la seconda è per la password
+
+    const re:any = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    const strongRegex:any = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+
+    
+    
+    const validateForm = () =>{
+        if(
+            name === "" ||
+            name.length === 0 ||
+            userName === "" ||
+            userName.length === 0 ||
+            strongRegex.test(email)
+            
+        ){
+            console.log("ciao")
+        }
+    }
+
+
+
+    const validateEmail = ():boolean =>{
+        if( 
+            email == "" || 
+            email == undefined ||
+            !re.test(email)
+        ){
+            return false
+        }
+        else
+        {
+            return true
+        }
+      }
+
 
     
 
@@ -27,6 +66,7 @@ const Register = () => {
                         placeholder="Inserisci Nome" 
                         value={name} 
                         onChange={e => setName(e.target.value)} 
+                        autoComplete="off"
                     />
                 </Form.Group>
 
@@ -37,6 +77,7 @@ const Register = () => {
                         placeholder="Inserisci Username" 
                         value = {userName}  
                         onChange = {e => setUserName(e.target.value)}
+                        autoComplete="off"
                     />
                 </Form.Group>
 
@@ -47,6 +88,7 @@ const Register = () => {
                         placeholder="Inserisci E-mail"
                         value = {email}
                         onChange = {e => setEmail(e.target.value)}
+                        autoComplete="off"
                     />
                 </Form.Group>
 
@@ -57,6 +99,7 @@ const Register = () => {
                         placeholder="Inserisce una Password" 
                         value = { password }
                         onChange = { e => setPassword(e.target.value)}
+                        autoComplete="off"
                     />
                 </Form.Group>
 
@@ -67,6 +110,7 @@ const Register = () => {
                         placeholder="Conferma Password" 
                         value = { confirmPassword }
                         onChange = { e => setConfirmPassword(e.target.value) }
+                        autoComplete="off"
                     />
                 </Form.Group>
 
@@ -84,6 +128,7 @@ const Register = () => {
                         variant="success" 
                         type="submit" 
                         className={styles.registerButton}
+                        disabled={btn}
                     >
                         Registra
                     </Button>

@@ -8,14 +8,17 @@ const DetailOrderPage = () => {
 
     const [quantityOrder, setQuantityOrder] = useState<any>([]);
 
-    const [totale, setTotale] = useState(0);
+    let totale:any = [];
 
-    let productsArray:any;
+    let number:any;
+
+    let [totNumber, setTotNumber] = useState(0);
 
     useEffect(() => {
 
         getDetailOrder()
             .then((data:any)=>{
+                console.log(data)
                 setDetailOrder(data);
                 setQuantityOrder(data);
             })
@@ -28,6 +31,8 @@ const DetailOrderPage = () => {
 
     const addOnCart = (e:any) =>{
         setQuantityOrder([...quantityOrder,e]);
+
+        totale.push(e.Prezzo)
     }
 
     const removeFromCart = (e:any) =>{
@@ -38,36 +43,41 @@ const DetailOrderPage = () => {
 
         setQuantityOrder([...a,...b])
 
+
     }
 
 
+    detailOrder.map((el:any) => {
+
+        let a = quantityOrder.filter((e:any)=> el=== e).length;
+
+        let b = el.Prezzo;
+
+        let c = a*b;
+
+        totale.push(c)
+
+    })
+
+    const sum = (total:any, sum:any) =>{
+        return total + sum 
+    }
+
     useEffect(() => {
 
-        detailOrder.map((el:any) => {
+        if (totale.length > 0){
+            number = totale.reduce(sum)
+        }
 
-            let a = quantityOrder.filter((e:any)=> el=== e).length;
+        setTotNumber(number)
+            
 
-            let b = el.Prezzo;
-
-            let c = a*b;
-
-            setTotale(() => totale + c)
-
-            // calculateTotal(c);
-        })
-
-    }, [quantityOrder])
-
-    // const calculateTotal = (el:any) => {
-    //     setTotale(totale + el)
-    //     console.log(totale)
-    // }
-
+    }, [totale])
 
 
 
     const demoCheck = () =>{
-        console.log(totale)
+        console.log(totNumber)
     }
 
     return (
@@ -106,10 +116,11 @@ const DetailOrderPage = () => {
                     })
             }
 
-            <div>
-                <h3>Totale</h3>
+            <div className={styles.totalContainer}>
 
-                <h3>{}</h3>
+                <h3 className={styles.totalTitle}>Totale</h3>
+
+                <h3 className={styles.totalNumber}>{ totNumber }</h3>
 
             </div>
             

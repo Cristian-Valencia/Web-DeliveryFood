@@ -59,6 +59,18 @@
     background-repeat: no-repeat;
 }   
 
+.orderLink::before{
+    content: " ";
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    background-image: url('../../assets/images/icons/order.svg');
+    position: absolute;
+    top: -10%;
+    left: 60%;
+    background-repeat: no-repeat;
+}
+
 
 
 @media only screen and (min-width: 992px) {
