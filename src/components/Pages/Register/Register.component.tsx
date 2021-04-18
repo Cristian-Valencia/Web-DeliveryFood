@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import styles from './Register.module.css';
 import { registerUser } from '../../../services/RegisterService';
@@ -19,6 +19,13 @@ const Register = () => {
 
     const strongRegex:any = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
 
+    const user = {
+        nominativo : name,
+        email: email,
+        username: userName,
+        password: password
+    }
+
     
     
     const validateForm = () =>{
@@ -27,14 +34,21 @@ const Register = () => {
             name.length === 0 ||
             userName === "" ||
             userName.length === 0 ||
-            strongRegex.test(email)
-            
+            strongRegex.test(email) ||
+            validateEmail() === false ||
+            password === "" ||
+            password.length === 0 ||
+            password !== confirmPassword ||
+            confirmPassword === "" ||
+            confirmPassword.length === 0 ||
+            check === false
         ){
-            console.log("ciao")
+            return true
+        }
+        else{
+            return false
         }
     }
-
-
 
     const validateEmail = ():boolean =>{
         if( 
@@ -49,6 +63,13 @@ const Register = () => {
             return true
         }
       }
+
+    const postRegister = (user:any) =>{
+        registerUser(user)
+            .then((data) =>{
+                console.log(data)
+            })
+    }
 
 
     
@@ -128,7 +149,12 @@ const Register = () => {
                         variant="success" 
                         type="submit" 
                         className={styles.registerButton}
-                        disabled={btn}
+                        disabled={validateForm()}
+                        onClick={(e:any) => { 
+                            e.preventDefault()
+                            postRegister(user)
+                        }
+                        }
                     >
                         Registra
                     </Button>

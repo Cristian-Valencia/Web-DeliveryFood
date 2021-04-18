@@ -4,7 +4,10 @@ import logo from '../../assets/images/logo-nero.png';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props:any) => {
+
+    console.log(props)
+    
     return (
 
         <div className = {styles.headerContainer}>
@@ -23,7 +26,15 @@ const Header = () => {
                     
                         <Link to="/restaurants" className={styles.restaurantsLink}>Ristoranti</Link>
                     
-                        <Link to="/login" className={styles.loginLink}>Login/Registrazioni</Link>
+                        {
+                           Object.entries(props.userStatus.user).length === 0
+                           ?
+                           <Link to="/login" className={styles.loginLink}>Login/Registrazioni</Link>
+                           :
+                           <Link to="/userPage" className={styles.loginLink}>Profilo</Link>
+                            
+                        }
+                        
 
                         <Link to="/orders" className={styles.orderLink}>Lista Ordini</Link>
                     

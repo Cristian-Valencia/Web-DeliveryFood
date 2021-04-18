@@ -1,0 +1,54 @@
+.userPageContainer{
+    width: 100%;
+    background-image: url(../../../assets/images/userBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 1rem;
+}
+
+.userCard{
+    padding: 1rem;
+    background: rgb(233, 233, 233);
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.profileImageContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.profileImageSubContainer{
+    width: 50%;
+}
+
+.pictureProfile{
+    width: 100%;
+    border-radius: 100%;
+}
+
+
+.informationContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.titleInformation{
+    width: 50%;
+}
+
+.titleInformation h3{
+    margin-bottom: 1rem;
+}
+
+.information{
+    width: 50%;
+}
+
+.information p{
+    margin-bottom: 1.3rem;
+}

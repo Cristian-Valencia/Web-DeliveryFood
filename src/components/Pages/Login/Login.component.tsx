@@ -2,12 +2,46 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styles from './Login.module.css';
+import { loginUser } from '../../../services/LoginService';
+import LoggedIn from '../../UI Components/LoggedIn/LoggedIn.component';
+import LoggedError from '../../UI Components/LoggedError/LoggedError.component';
 
 
-const Login = () => {
+const Login = (props:any) => {
 
-const [userName, setUserName] = useState("")
-const [password, setPassword] = useState("")
+    // IdUtente: 69
+
+    const [userName, setUserName] = useState<string>("");
+
+    const [password, setPassword] = useState<string>("");
+
+    const [logged, setLogged] = useState<boolean>(false);
+
+    const [logError, setLogError] = useState<any>(false);
+
+
+    const user:any = {
+        username: userName,
+        password: password,
+    };
+
+    const login = (el:any) =>{
+
+        loginUser(el)
+            .then((data:any)=>{
+                console.log(data);
+                props.loginUpdate(data);
+                if(data.message==="Utente presente"){
+                    setLogged(true);
+                }else{
+                    setLogError(true)
+                }
+            })
+
+        
+
+
+    };
 
 
 
@@ -49,10 +83,38 @@ const [password, setPassword] = useState("")
                 </p>
                 
 
-                <Button variant="primary" type="submit" className={styles.buttonLogin}>
-                    Submit
+                <Button 
+                    variant="primary" 
+                    type="submit" 
+                    className={styles.buttonLogin}
+                    onClick={(e:any) =>{
+                        e.preventDefault();
+                        login(user)
+                    }}
+                >
+                    Accedi
                 </Button>
             </Form>
+
+            {
+                logged ? 
+                <LoggedIn /> 
+                : 
+                null
+            }
+
+            {
+                logError ? 
+                <LoggedError 
+                    setLogError = {setLogError} 
+                    setUserName = {setUserName}
+                    setPassword = {setPassword}
+                /> 
+                : 
+                null
+            }
+
+            
 
 
         </div>

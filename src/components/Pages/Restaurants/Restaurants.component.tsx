@@ -14,6 +14,7 @@ const Restaurants = (props:any) => {
 
         getListedRestaurants()
             .then((data)=>{
+                console.log(data)
                 setListedRestaurants(data);
             })
     }, [])

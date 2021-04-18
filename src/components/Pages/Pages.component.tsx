@@ -5,11 +5,12 @@ import Home from './Home/Home.component';
 import Restaurants from './Restaurants/Restaurants.container';
 import SelectedRestaurant from './SelectedRestaurant/SelectedRestaurant.container';
 import styles from './Pages.module.css' 
-import Login from './Login/Login.component';
+import Login from './Login/Login.container';
 import Register from './Register/Register.component';
 import Orders from './Orders/Orders.component';
 import Cart from './Cart/Cart.component';
 import DetailOrderPage from './DetailOrderPage/DetailOrderPage.component';
+import UserPage from './UserPage/UserPage.container';
 
 const Pages = () => {
     return (
@@ -48,6 +49,9 @@ const Pages = () => {
                     <DetailOrderPage />
                 </Route>
 
+                <Route exact path = "/userPage">
+                    <UserPage />
+                </Route>
 
                 <Route exact path="/*">
                     <Error />
