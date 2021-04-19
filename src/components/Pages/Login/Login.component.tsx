@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styles from './Login.module.css';
 import { loginUser } from '../../../services/LoginService';
 import LoggedIn from '../../UI Components/LoggedIn/LoggedIn.component';
 import LoggedError from '../../UI Components/LoggedError/LoggedError.component';
+// import { addNewOrder } from '../../../services/AddNewOrderService';
+// import { getDetailOrder } from '../../../services/UserDetailOrderService';
 
 
 const Login = (props:any) => {
-
-    // IdUtente: 69
 
     const [userName, setUserName] = useState<string>("");
 

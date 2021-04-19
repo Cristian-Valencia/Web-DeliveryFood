@@ -1,0 +1,44 @@
+.emptyOrderContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(../../../../assets/images/backgroundLogin.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 4rem;
+}
+
+.titleContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.titleContainer h3{
+    color: white;
+}
+
+.cardMessageContainer{
+    width: 80%;
+    background: white;
+    border: 1px solid black;
+    margin-bottom: 5rem;
+    border-radius: 10px;
+}
+
+.gifContainer{
+    width: 100%;
+}
+
+.gifSubContainer{
+    width: 100%;
+}
+
+.gifImage{
+    width: 100%;
+}
+
+.messageContainer{
+    padding: 2rem;
+}

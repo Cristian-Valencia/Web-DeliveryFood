@@ -2,66 +2,46 @@ import React, { useEffect, useState } from 'react';
 import styles from './Orders.module.css';
 import { getUrserOrder } from '../../../services/UserOrderService';
 import { Link } from 'react-router-dom';
+import OrderLoggedIn from './OrderLoggedIn/OrderLoggedIn.container';
+import OrderLoggedOut from './OrderLoggedOut/OrderLoggedOut.component';
+import OrderLoggedInEmpty from './OrderLoggedInEmpty/OrderLoggedInEmpty.component';
 
-const Order = () => {
+const Order = (props:any) => {
 
-    const [order, setOrder] = useState([])
+    // props.userStatus.user.IdUtente
 
-    useEffect(() => {
-        getUrserOrder()
+    const [orderLength, setOrderLength] = useState<any>(0)
+
+    console.log(props)
+
+    if(props.userStatus.user.IdUtente){
+        getUrserOrder(props.userStatus.user.IdUtente)
             .then((data:any)=>{
-                console.log(data);
-                setOrder(data);
+                setOrderLength(data.length);
+                console.log(orderLength)
             })
-    }, [])
+    }
+
 
 
     return (
         <div className={styles.cartContainer}>
-            
+
             {
-                order &&
-                    order.map((el:any)=>{
-                        return <Link to="detailOrderPage" key={el.IdOrdine} className={styles.orderCard}>
+                props.userStatus.user.IdUtente 
+                
+                ?
+                
+                orderLength > 0 ? <OrderLoggedIn /> : <OrderLoggedInEmpty/>
+                
+                :
 
-                                    <div className={styles.orderTitle}>
-                                        <h3>Ordine #{el.IdOrdine}</h3>
-                                        <h3>{el.Ristorante}</h3>
-                                    </div>
-
-                                    <div className={styles.titleInformationContainer}>
-
-                                        <h3>Indirizzo:</h3>
-
-                                        <h3>Costi di Consegna:</h3>
-                                        
-                                        <h3>Sconto</h3>
-                                        
-                                        <h3>Tempo di consegna:</h3>
-
-                                        <h3>Data Ordine:</h3>
-                                        
-                                    </div>
-
-                                    <div className={styles.informationContainer}>
-
-                                        <h2>{el.IndirizzoConsegna}</h2>
-
-                                        <h2>{el.CostiConsegna}0 €</h2>
-
-                                        <h2>{el.Sconto}%</h2>
-
-                                        <h2>{el.TempiConsegna} m</h2>
-
-                                        <h2>{el.DataOrdine}</h2>
-
-                                    </div>
-
-
-                               </Link>
-                    })
+                <OrderLoggedOut />
+                
             }
+            
 
+            
         </div>
     )
 }

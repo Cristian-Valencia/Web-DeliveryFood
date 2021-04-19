@@ -1,0 +1,2 @@
+export const CART_LENGTH = "CART_LENGTH";
+export const REMOVE_LENGTH = "REMOVE_LENGTH";

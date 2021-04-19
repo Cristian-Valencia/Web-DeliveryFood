@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styles from './SelectedRestaurant.module.css';
 import { getProducts } from '../../../services/ListedProductsService';
-// import { loginUser } from '../../../services/LoginService';
-// import { Link } from 'react-router-dom';
-// import back from '../../../assets/images/icons/arrow.svg';
 import BackArrow from '../../UI Components/BackArrow/BackArrow.component';
-import Cart from '../../UI Components/Cart/Cart.component';
+import Cart from '../../UI Components/Cart/Cart.container';
+
 
 const SelectedRestaurant = (props:any) => {
 
-    // console.log(props)
+    console.log(props)
 
     const [menu, setMenu] = useState([]);
     const [bibite, setBibite] = useState([]);
@@ -19,16 +17,26 @@ const SelectedRestaurant = (props:any) => {
         
         getProducts(props.detailRestaurant.restaurant.IdRistorante)
             .then((data)=>{
+                console.log(data)
                 data.sort((a:any, b:any)=> a.IdProdotto - b.IdProdotto);
                 setMenu(data.filter((el:any)=> el.IdProdotto < 31));
                 setBibite(data.filter((el:any) => el.IdProdotto > 30));
-                // console.log(data)
             });
 
-    })
+    },[])
 
     const lookAtTheProducts = (product:any) =>{
-        console.log(product)
+
+        if(props.cartDetail.cart.includes(product)){
+            props.addOnLength(product);
+        } else{
+            props.addOnCart(product);
+            props.addOnLength(product);
+        }
+
+        console.log(props)
+
+        
     }
     
     return (

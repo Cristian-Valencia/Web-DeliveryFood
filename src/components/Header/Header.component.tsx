@@ -5,8 +5,6 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Header = (props:any) => {
-
-    console.log(props)
     
     return (
 

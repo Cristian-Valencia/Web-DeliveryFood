@@ -14,16 +14,16 @@ const DetailOrderPage = () => {
 
     let [totNumber, setTotNumber] = useState(0);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        getDetailOrder()
-            .then((data:any)=>{
-                console.log(data)
-                setDetailOrder(data);
-                setQuantityOrder(data);
-            })
+    //     getDetailOrder()
+    //         .then((data:any)=>{
+    //             console.log(data)
+    //             setDetailOrder(data);
+    //             setQuantityOrder(data);
+    //         })
         
-    }, [])
+    // }, [])
 
     const quantita = (e:any) =>{
         return quantityOrder.filter((product:any)=>{ return e === product }).length;

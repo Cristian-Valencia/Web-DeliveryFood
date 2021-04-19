@@ -7,10 +7,11 @@ import SelectedRestaurant from './SelectedRestaurant/SelectedRestaurant.containe
 import styles from './Pages.module.css' 
 import Login from './Login/Login.container';
 import Register from './Register/Register.component';
-import Orders from './Orders/Orders.component';
-import Cart from './Cart/Cart.component';
+import Orders from './Orders/Orders.container';
+import Cart from './Cart/Cart.container';
 import DetailOrderPage from './DetailOrderPage/DetailOrderPage.component';
 import UserPage from './UserPage/UserPage.container';
+import ConfirmOrder from './ConfirmOrder/ConfirmOrder.container';
 
 const Pages = () => {
     return (
@@ -51,6 +52,10 @@ const Pages = () => {
 
                 <Route exact path = "/userPage">
                     <UserPage />
+                </Route>
+
+                <Route exact path = "/confirmOrderPage">
+                    <ConfirmOrder />
                 </Route>
 
                 <Route exact path="/*">

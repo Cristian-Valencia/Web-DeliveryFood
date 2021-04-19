@@ -10,7 +10,7 @@ const cartReducer = ( state = initialState, action : any ) =>{
         case CART_DETAIL:
 
             return{
-                cart: action.payload 
+                cart: [...state.cart,action.payload]
             }
 
         default : return state

@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
-import { getRestaurantDetail } from '../../../store/detailSelectedRestaurant/detailSelectedRestaurant.action';
+import { addCartDetail } from '../../../store/cart/cart.action';
+import { addCartLength } from '../../../store/cartLength/cartLength.action';
 import SelectedRestaurant from './SelectedRestaurant.component';
 
 const mapStateToProps = ( state : any ) => {
     return{
-        detailRestaurant: state.restaurantDetail
+        detailRestaurant: state.restaurantDetail,
+        cartDetail : state.cartDetail
     }
 }
 
 const mapDispatchToProps = (dispatch:any) =>{
     return{
-        restaurantUpdate: (detail:any) => dispatch(getRestaurantDetail(detail))
+        addOnCart: (detail:any) => dispatch(addCartDetail(detail)),
+        addOnLength : (detail:any) => dispatch(addCartLength(detail))
     }
 }
 
