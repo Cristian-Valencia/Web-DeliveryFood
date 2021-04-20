@@ -3,7 +3,7 @@ import Cart from './Cart.component';
 
 const mapStateToProps = ( state : any ) => {
     return{
-        cartDetail : state.cartDetail
+        cartDetail : state.cartLength
     }
 }
 

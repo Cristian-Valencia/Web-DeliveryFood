@@ -28,7 +28,7 @@ const Footer = () => {
                 <img src={youtube} alt="YoutubeLogo"/>
 
             </div>
-            <div className={styles.paymentCotnainer}>
+            <div className={styles.paymentContainer}>
                 <img src={visa} alt="Visa's Logo" className={styles.payment}/>
                 <img src={paypal} alt="Paypal's Logo" className={styles.payment}/>
                 <img src={mastercard} alt="MasterCard's Logo" className={styles.payment}/>

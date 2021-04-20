@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-// import { getUserStatus } from '../../../store/userStatus/userStatus.action';
+import { addCartDetail } from '../../../../store/cart/cart.action';
+import { getIdOrder } from '../../../../store/idNewOrder/idNewOrder.action';
 import OrderLoggedIn from './OrderLoggedIn.component';
 
 const mapStateToProps = ( state : any ) => {
@@ -8,11 +9,12 @@ const mapStateToProps = ( state : any ) => {
     }
 }
 
-// const mapDispatchToProps = (dispatch:any) =>{
-//     return{
-//         loginUpdate: (detail:any) => dispatch(getUserStatus(detail))
-//     }
-// }
+const mapDispatchToProps = (dispatch:any) =>{
+    return{
+        updateIdOrder: (detail:any) => dispatch(getIdOrder(detail)),
+        addOnCart: (detail:any) => dispatch(addCartDetail(detail))
+    }
+}
 
-const OrderLoggedInContainer = connect(mapStateToProps)(OrderLoggedIn);
+const OrderLoggedInContainer = connect(mapStateToProps, mapDispatchToProps)(OrderLoggedIn);
 export default OrderLoggedInContainer;

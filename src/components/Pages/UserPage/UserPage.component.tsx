@@ -15,7 +15,7 @@ const UserPage = (props:any) => {
 
         getUserDetail(props.userStatus.user.IdUtente)
             .then((data:any)=>{
-                console.log(data);
+                // console.log(data);
                 setUserInformation(data);
             })
 
@@ -23,7 +23,7 @@ const UserPage = (props:any) => {
 
     const logOut = () =>{
         props.loginUpdate({});
-        console.log(props.userStatus.user.IdUtente);
+        // console.log(props.userStatus.user.IdUtente);
         setLogOutStatus(true);
     }
 

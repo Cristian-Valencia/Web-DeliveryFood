@@ -7,7 +7,7 @@ import Cart from '../../UI Components/Cart/Cart.container';
 
 const SelectedRestaurant = (props:any) => {
 
-    console.log(props)
+    // console.log(props)
 
     const [menu, setMenu] = useState([]);
     const [bibite, setBibite] = useState([]);
@@ -17,7 +17,7 @@ const SelectedRestaurant = (props:any) => {
         
         getProducts(props.detailRestaurant.restaurant.IdRistorante)
             .then((data)=>{
-                console.log(data)
+                // console.log(data)
                 data.sort((a:any, b:any)=> a.IdProdotto - b.IdProdotto);
                 setMenu(data.filter((el:any)=> el.IdProdotto < 31));
                 setBibite(data.filter((el:any) => el.IdProdotto > 30));
@@ -34,7 +34,7 @@ const SelectedRestaurant = (props:any) => {
             props.addOnLength(product);
         }
 
-        console.log(props)
+        // console.log(props)
 
         
     }

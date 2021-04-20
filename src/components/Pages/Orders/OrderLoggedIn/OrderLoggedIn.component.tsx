@@ -8,14 +8,24 @@ const OrderLoggedIn = (props:any) => {
 
     const [order, setOrder] = useState([])
 
+    
+
+    const control = (e:any) =>{
+        // console.log(e.IdOrdine);
+        props.updateIdOrder(e.IdOrdine)
+    }
+
 
 
     useEffect(() => {
         getUrserOrder(props.userStatus.user.IdUtente)
             .then((data:any)=>{
-                console.log(data);
+                // console.log(data);
                 setOrder(data);
             })
+
+        // console.log(props)
+        
     }, [])
     
     return (
@@ -23,7 +33,7 @@ const OrderLoggedIn = (props:any) => {
             {
                 order &&
                     order.map((el:any)=>{
-                        return <Link to="detailOrderPage" key={el.IdOrdine} className={styles.orderCard}>
+                        return <Link to="detailOrderPage" key={el.IdOrdine} className={styles.orderCard} onClick={()=>control(el)}>
 
                                     <div className={styles.orderTitle}>
                                         <h3>Ordine #{el.IdOrdine}</h3>
@@ -32,11 +42,9 @@ const OrderLoggedIn = (props:any) => {
 
                                     <div className={styles.titleInformationContainer}>
 
-                                        <h3>Indirizzo:</h3>
+                                        {/* <h3>Indirizzo:</h3> */}
 
                                         <h3>Costi di Consegna:</h3>
-                                        
-                                        <h3>Sconto</h3>
                                         
                                         <h3>Tempo di consegna:</h3>
 
@@ -46,11 +54,16 @@ const OrderLoggedIn = (props:any) => {
 
                                     <div className={styles.informationContainer}>
 
-                                        <h2>{el.IndirizzoConsegna}</h2>
+                                        {/* <h2>{el.IndirizzoConsegna}</h2> */}
 
-                                        <h2>{el.CostiConsegna}0 €</h2>
+                                        {
+                                                el.CostiConsegna.includes('.') ?
+                                                <h2>{el.CostiConsegna}0 €</h2>
+                                                :
+                                                <h2>{el.CostiConsegna} €</h2>
+                                        }
 
-                                        <h2>{el.Sconto}%</h2>
+                                        {/* <h2>{el.CostiConsegna}0 €</h2> */}
 
                                         <h2>{el.TempiConsegna} m</h2>
 

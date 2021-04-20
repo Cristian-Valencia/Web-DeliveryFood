@@ -29,7 +29,7 @@ const Login = (props:any) => {
 
         loginUser(el)
             .then((data:any)=>{
-                console.log(data);
+                // console.log(data);
                 props.loginUpdate(data);
                 if(data.message==="Utente presente"){
                     setLogged(true);

@@ -49,8 +49,58 @@
     width: 100%;
 }
 
+@media only screen and (min-width:992px){
+    .carouselContainer{
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+.carouselSubContainer{
+    width: 100%;
+}
+
+@media only screen and (min-width:992px){
+    .carouselSubContainer{
+        width: 40%;
+        margin: 1rem;
+    }
+}
+
 .carouselTitle{
     margin: 1rem;
+}
+
+@media only screen and (min-width:992px){
+    .carouselTitle{
+        width: 100%;
+    }
+}
+
+.littleInformationContainer{
+    display: none;
+}
+
+@media only screen and (min-width:992px){
+    .littleInformationContainer{
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        margin: 1rem;
+    }
+}
+
+.littleInformationTitle{
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.littleInformationDescription{
+    width: 100%;
+    margin-bottom: 4rem;
 }
 
 .downloadAppContainer{

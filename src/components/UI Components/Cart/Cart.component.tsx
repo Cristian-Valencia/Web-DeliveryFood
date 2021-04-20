@@ -7,9 +7,10 @@ import { addNewOrder } from '../../../services/AddNewOrderService';
 
 const Cart = (props:any) => {
 
-    console.log(props.cartDetail.cart.length)
+    // console.log(props.cartDetail.cart.length)
 
     return (
+
         <Link to="/cart" className={styles.shoppingBagContainer}>
 
             <img src={shoppingBag} alt="shoppingBagImage" className={styles.shoppingBag} />

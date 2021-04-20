@@ -22,6 +22,12 @@
     border-radius: 10px;
 }
 
+@media only screen and (min-width:992px){
+    .messageContainer{
+        width: 30%;
+    }
+}
+
 .loggedMessage{
     width: 100%;
     text-align: center;

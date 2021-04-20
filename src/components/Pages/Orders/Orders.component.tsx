@@ -12,13 +12,13 @@ const Order = (props:any) => {
 
     const [orderLength, setOrderLength] = useState<any>(0)
 
-    console.log(props)
+    // console.log(props)
 
     if(props.userStatus.user.IdUtente){
         getUrserOrder(props.userStatus.user.IdUtente)
             .then((data:any)=>{
                 setOrderLength(data.length);
-                console.log(orderLength)
+                // console.log(orderLength)
             })
     }
 

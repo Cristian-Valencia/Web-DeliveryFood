@@ -26,7 +26,23 @@ const Home = () => {
 
                 <h2 className={styles.carouselTitle}>I nostri Ristoranti: </h2>
 
-                <CarouselComponent />
+                <div className={styles.carouselSubContainer}>
+
+                    <CarouselComponent />
+
+                </div>
+
+                <div className={styles.littleInformationContainer}>
+
+                    <h2 className={styles.littleInformationTitle}>Le Cucine più amate</h2>
+
+                    <p className={styles.littleInformationDescription}>Trova le cucine più amate dai ristoranti nella tua zona e ordina online a domicilio.</p>
+
+                </div>
+
+
+
+                
 
             </div>
 

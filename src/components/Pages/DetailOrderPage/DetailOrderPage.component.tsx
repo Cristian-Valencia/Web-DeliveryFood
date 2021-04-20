@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styles from './DetailOrderPage.module.css';
 import { getDetailOrder } from '../../../services/UserDetailOrderService';
 
-const DetailOrderPage = () => {
+const DetailOrderPage = (props:any) => {
 
     const [detailOrder, setDetailOrder] = useState<any>([]);
 
     const [quantityOrder, setQuantityOrder] = useState<any>([]);
+
+    console.log(props.idOrdine.id)
 
     let totale:any = [];
 
@@ -14,16 +16,16 @@ const DetailOrderPage = () => {
 
     let [totNumber, setTotNumber] = useState(0);
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     getDetailOrder()
-    //         .then((data:any)=>{
-    //             console.log(data)
-    //             setDetailOrder(data);
-    //             setQuantityOrder(data);
-    //         })
+        getDetailOrder(props.idOrdine.id)
+            .then((data:any)=>{
+                console.log(data)
+                setDetailOrder(data);
+                setQuantityOrder(data);
+            })
         
-    // }, [])
+    }, [])
 
     const quantita = (e:any) =>{
         return quantityOrder.filter((product:any)=>{ return e === product }).length;
@@ -94,7 +96,15 @@ const DetailOrderPage = () => {
 
                                         <p className={styles.descriptionProduct}>{el.Descrizione}</p>
 
-                                        <h3 className={styles.price}>{el.Prezzo}€</h3>
+                                        {
+                                                el.Prezzo.includes('.') ?
+                                                <h3 className={styles.price}>{el.Prezzo}0 €</h3>
+                                                :
+                                                <h3 className={styles.price}>{el.Prezzo} €</h3>
+                                        }
+
+
+                                        {/* <h3 >{el.Prezzo}€</h3> */}
 
                                     </div>
 

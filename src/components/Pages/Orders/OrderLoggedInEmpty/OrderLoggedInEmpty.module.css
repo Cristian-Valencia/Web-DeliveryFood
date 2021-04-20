@@ -27,6 +27,12 @@
     border-radius: 10px;
 }
 
+@media only screen and (min-width:992px){
+    .cardMessageContainer{
+        width: 40%;
+    }
+}
+
 .gifContainer{
     width: 100%;
 }

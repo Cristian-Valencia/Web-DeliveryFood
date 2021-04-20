@@ -189,6 +189,7 @@
     transform: translate(-50%, -50%);
     background: coral;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 /* Pizza Card CSS */

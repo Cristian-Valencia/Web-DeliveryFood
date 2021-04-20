@@ -12,7 +12,7 @@
     margin-right: 1rem;
 }
 
-.homeLink, .restaurantsLink, .loginLink, .orderLink{
+.homeLink, .restaurantsLink, .loginLink, .orderLink, .profileLink{
     color: unset;
     text-decoration: none;
     color: unset;
@@ -59,6 +59,18 @@
     background-repeat: no-repeat;
 }   
 
+.profileLink::before{
+    content: " ";
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    background-image: url('../../assets/images/icons/login.png');
+    position: absolute;
+    top: -10%;
+    left: 70%;
+    background-repeat: no-repeat;
+}   
+
 .orderLink::before{
     content: " ";
     background-size: contain;
@@ -90,6 +102,14 @@
 
     .loginLink::before{
         left:-20%;
+    }
+
+    .profileLink::before{
+        left: -45%;
+    }   
+
+    .orderLink::before{
+        left: -30%;
     }
 
     .linkContainer{

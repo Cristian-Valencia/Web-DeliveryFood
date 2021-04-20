@@ -17,7 +17,7 @@ const LoggedError = (props:any) => {
 
                 <h2 className={styles.loggedErrorMessage}>Dati non validi</h2>
 
-                <button onClick={retryBtn}>Riprova</button>   
+                <button className={styles.retrybtn} onClick={retryBtn}>Riprova</button>   
 
             </div>
 

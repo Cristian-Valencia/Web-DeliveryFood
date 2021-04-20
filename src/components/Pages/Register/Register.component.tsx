@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import styles from './Register.module.css';
 import { registerUser } from '../../../services/RegisterService';
+import RegisterDone from '../../UI Components/RegisterDone/RegisterDone.component';
+
 
 const Register = () => {
 
@@ -12,6 +14,7 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [check, setCheck] = useState<boolean>(false);
     let btn:boolean = true;
+    let [registerStatus, setRegisterStatus] = useState(false);
 
     // queste sono le regular Expression la prima è per la mail e la seconda è per la password
 
@@ -69,6 +72,8 @@ const Register = () => {
             .then((data) =>{
                 console.log(data)
             })
+
+        setRegisterStatus(true)
     }
 
 
@@ -163,6 +168,21 @@ const Register = () => {
 
 
             </Form>
+
+
+            {
+                registerStatus
+
+                ?
+
+                <RegisterDone />
+
+                :
+
+                null
+            }
+
+
         </div>
     )
 }

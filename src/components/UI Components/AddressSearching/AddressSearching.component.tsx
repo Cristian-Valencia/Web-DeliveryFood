@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './AddressSearch.module.css'
 
 const AddressSearching = () => {
@@ -9,9 +10,12 @@ const AddressSearching = () => {
 
                 <input type="text" placeholder = "Inserisci Indirizzo, Via del ..." className={styles.input}/>
 
-                <div className={styles.button}>
+                {/* <div className={styles.button}>
                     <p className={styles.searchWord}>Cerca</p>
-                </div>
+                </div> */}
+
+                <Link to="/restaurants" className={styles.button}>Cerca</Link>
+
 
             </div>
 

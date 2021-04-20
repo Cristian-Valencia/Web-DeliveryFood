@@ -6,12 +6,25 @@
     padding: 4rem 1rem;
 }
 
+@media only screen and (min-width:992px){
+    .userPageContainer{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .userCard{
     padding: 1rem;
     background: rgb(233, 233, 233);
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
+}
+
+@media only screen and (min-width:992px){
+    .userCard{
+        width: 50%;
+    }
 }
 
 .profileImageContainer{
@@ -51,4 +64,10 @@
 
 .information p{
     margin-bottom: 1.3rem;
+}
+
+@media only screen and (min-width:992px){
+    .information p{
+        margin-bottom: 1.6rem;
+    }
 }

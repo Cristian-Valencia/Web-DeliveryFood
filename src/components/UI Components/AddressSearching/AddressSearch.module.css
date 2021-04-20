@@ -42,6 +42,8 @@
     background-color: #FFA500;
     border-radius: 10px;
     text-align: center;
+    text-decoration: none;
+    color: black;
 }
 
 .searchWord{

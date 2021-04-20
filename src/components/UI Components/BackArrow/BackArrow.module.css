@@ -14,6 +14,12 @@
     margin-left: 1rem;
 }
 
+@media only screen and (min-width:992px){
+    .arrowImage{
+        width: 3%;
+    }
+}
+
 .arrowTitle{
     color: rgb(218, 218, 218);
     display: inline;

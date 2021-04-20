@@ -9,7 +9,7 @@ import Login from './Login/Login.container';
 import Register from './Register/Register.component';
 import Orders from './Orders/Orders.container';
 import Cart from './Cart/Cart.container';
-import DetailOrderPage from './DetailOrderPage/DetailOrderPage.component';
+import DetailOrderPage from './DetailOrderPage/DetailOrderPage.container';
 import UserPage from './UserPage/UserPage.container';
 import ConfirmOrder from './ConfirmOrder/ConfirmOrder.container';
 

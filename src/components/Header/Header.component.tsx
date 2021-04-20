@@ -29,7 +29,7 @@ const Header = (props:any) => {
                            ?
                            <Link to="/login" className={styles.loginLink}>Login/Registrazioni</Link>
                            :
-                           <Link to="/userPage" className={styles.loginLink}>Profilo</Link>
+                           <Link to="/userPage" className={styles.profileLink}>Profilo</Link>
                             
                         }
                         
